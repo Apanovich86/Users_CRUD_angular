@@ -1,4 +1,4 @@
-.get-user {
+.user-update {
   display: block;
   width: 390px;
   margin: 20px 0;
@@ -8,6 +8,6 @@
   transition: .3s border-color;
 }
 
-.get-user:hover {
+.user-update:hover {
   border: 1px solid #aaa;
 }

@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+.title {
+  display: flex;
+  justify-content: center;
+  color: rgb(56, 129, 93);
+  font-size: 250%;
+  margin-top: 50px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit {
+  display: block;
+  width: 390px;
+  margin: 20px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #1e6dfc;
+  color: #eee;
+}
+
+.submit:hover {
+  background: rgba(112, 161, 248, 0.9);
+  color: #eee;
+}
+
+.submit:active {
+  background: #1e6dfc;
+  color: #eee;
+  width: 410px;
+  margin: 20px 0;
+}

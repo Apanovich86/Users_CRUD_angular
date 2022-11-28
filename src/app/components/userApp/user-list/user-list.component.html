@@ -1,49 +1,29 @@
-<h2>Users</h2>
-<button [routerLink]="['/addUser']">Add</button>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone number</th>
-    <th>Options</th>
-  </tr>
-  <tr *ngFor="let user of userList;let i= index">
-    <td>{{i+1}}</td>
-    <td>{{user.userName}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.phoneNumber}}</td>
-    <td>
-      <button [routerLink]="['/getUser']" (click)="onSelect(this.user)">Details</button>
-      <button [routerLink]="['/updateUser']">Edit</button>
-      <button>Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <td>Stephen C. Cox</td>
-    <td>stephen@gmail.com</td>
-    <td>+380973445678</td>
-    <td>
-      <button [routerLink]="['/getUser']">Details</button>
-      <button [routerLink]="['/updateUser']">Edit</button>
-      <button>Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <td>Josephin Tan</td>
-    <td>$150</td>
-    <td>-</td>
-    <td><button [routerLink]="['/updateUser']">Edit</button></td>
-  </tr>
-  <tr>
-    <td>Joyce Ming</td>
-    <td>$200</td>
-    <td>$35</td>
-    <td><button [routerLink]="['/updateUser']">Edit</button></td>
-  </tr>
-  <tr>
-    <td>James A. Pentel</td>
-    <td>$175</td>
-    <td>$25</td>
-    <td><button [routerLink]="['/updateUser']">Edit</button></td>
-  </tr>
-</table>
+<div class="title-list">List of users</div>
+<div class="d-flex">
+  <button class="add-btn" [routerLink]="['/addUser']">+ Add user</button>
+</div>
+
+<div class="d-flex">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Options</th>
+    </tr>
+    <tr *ngFor="let item of userList;let i= index">
+      <td>{{i + 1}}</td>
+      <td>{{item.userName}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.phoneNumber}}</td>
+      <td>
+        <div class="btn-align">
+        <button class="options-btn" [routerLink]="['/getUser']" (click)="onSelect(item)">Details</button>
+        <button class="options-btn background-green" [routerLink]="['/updateUser', item.userId]">Edit</button>
+        <button class="options-btn background-red" (click)="delete(item.userId)">Delete</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {userObj} from "../../../interfaces/user";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-list',
@@ -13,11 +14,25 @@ export class UserListComponent implements OnInit {
   onSelect(item: userObj): void {
     this.selectedItem = item;
   }
-  constructor() {
+  constructor(private router: Router) {
     this.userList = [];
   }
 
   ngOnInit(): void {
+    const records = localStorage.getItem('userList');
+    if (records !== null) {
+      this.userList = JSON.parse(records);
+    }
+  }
+
+  delete(id:any) {
+    const oldRecords = localStorage.getItem('userList');
+    if (oldRecords !== null) {
+      const userList = JSON.parse(oldRecords);
+      userList.splice(userList.findIndex((ind:any) => ind.userId === id), 1);
+      localStorage.setItem('userList', JSON.stringify(userList));
+    }
+    this.router.navigateByUrl('');
   }
 
 }

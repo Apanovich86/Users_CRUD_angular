@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {userObj} from "../../../interfaces/user";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-update',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserUpdateComponent implements OnInit {
 
-  constructor() { }
+  userObj: userObj;
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.userObj = new userObj();
+    this.route.params.subscribe((res) => {
+      this.userObj.userId = res['id']
+    })
+  }
 
   ngOnInit(): void {
+    const oldRecords = localStorage.getItem('userList');
+    if (oldRecords !== null) {
+      const userList = JSON.parse(oldRecords);
+      const currentUser = userList.find((item: any) => item.userId == this.userObj.userId);
+      if (currentUser !== undefined) {
+        this.userObj.userName = currentUser.userName;
+        this.userObj.email = currentUser.email;
+        this.userObj.phoneNumber = currentUser.phoneNumber;
+      }
+    }
+  }
+
+  updateUser() {
+    const oldRecords = localStorage.getItem('userList')
+    if (oldRecords !== null) {
+      const userList = JSON.parse(oldRecords);
+      userList.splice(userList.findIndex((ind:any) => ind.userId === this.userObj.userId), 1);
+      userList.push(this.userObj);
+      localStorage.setItem('userList', JSON.stringify(userList));
+    }
+    this.router.navigateByUrl('');
   }
 
 }
