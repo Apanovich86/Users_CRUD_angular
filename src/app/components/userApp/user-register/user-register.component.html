@@ -1,13 +1,9 @@
+<div class="title">Add User:</div>
 <form>
-  <label>Name</label>
-  <input type="text" name="name" [(ngModel)]="userObj.userName"/>
-  <br/><br/>
-
-  <label>Email</label>
-  <input type="text" name="email" [(ngModel)]="userObj.email"/>
-  <br/><br/>
-
-  <label>Phone</label>
-  <input type="text" name="phone" [(ngModel)]="userObj.phoneNumber"/>
-  <br/><br/>
+  <div class="inputs-middle">
+  <input type="text" name="name" class="user-register" placeholder="Name" [(ngModel)]="userObj.userName"/>
+  <input type="text" name="email" class="user-register" placeholder="Email" [(ngModel)]="userObj.email"/>
+  <input type="text" name="phone" class="user-register" placeholder="Phone" [(ngModel)]="userObj.phoneNumber"/>
+  <button class="submit">Submit</button>
+  </div>
 </form>

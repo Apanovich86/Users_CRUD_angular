@@ -13,6 +13,7 @@
     <td>{{user.email}}</td>
     <td>{{user.phoneNumber}}</td>
     <td>
+      <button [routerLink]="['/getUser']" (click)="onSelect(this.user)">Details</button>
       <button [routerLink]="['/updateUser']">Edit</button>
       <button>Delete</button>
     </td>
@@ -22,6 +23,7 @@
     <td>stephen@gmail.com</td>
     <td>+380973445678</td>
     <td>
+      <button [routerLink]="['/getUser']">Details</button>
       <button [routerLink]="['/updateUser']">Edit</button>
       <button>Delete</button>
     </td>

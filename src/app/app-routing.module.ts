@@ -2,7 +2,8 @@ import {NgModule} from "@angular/core";
 import {UserListComponent} from "./components/userApp/user-list/user-list.component";
 import { RouterModule, Routes } from '@angular/router';
 import {UserRegisterComponent} from "./components/userApp/user-register/user-register.component";
-import {UserUpdateComponent} from "./components/userApp/user-update/user-update/user-update.component";
+import {UserUpdateComponent} from "./components/userApp/user-update/user-update.component";
+import {GetUserComponent} from "./components/userApp/get-user/get-user.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'updateUser',
     component: UserUpdateComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'getUser',
+    component: GetUserComponent,
     pathMatch: 'full'
   },
 ];

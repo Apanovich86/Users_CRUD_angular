@@ -2,20 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import {userObj} from "../../../interfaces/user";
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-get-user',
+  templateUrl: './get-user.component.html',
+  styleUrls: ['./get-user.component.css']
 })
-export class UserListComponent implements OnInit {
-
-  userList: userObj [];
+export class GetUserComponent implements OnInit {
   selectedItem: userObj = {};
   onSelect(item: userObj): void {
     this.selectedItem = item;
   }
-  constructor() {
-    this.userList = [];
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
