@@ -18,19 +18,13 @@ th {
 
 td {
   border: 2px solid #6678b1;
-  color: #669;
   padding: 9px 8px;
   transition: .3s linear;
-}
-
-tr:hover td {
-  color: #6699ff;
 }
 
 .title-list {
   display: flex;
   justify-content: center;
-  color: rgb(56, 129, 93);
   font-size: 250%;
   margin-top: 50px;
   font-family: Arial;
@@ -68,17 +62,29 @@ tr:hover td {
   width: 62px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid gray;
+  border: none;
   background: #facb0e;
   color: white;
+}
+
+.options-btn:hover {
+  background: #f3da75;
 }
 
 .background-green {
   background: forestgreen;
 }
 
+.background-green:hover {
+  background: #5c945c;
+}
+
 .background-red {
   background: red;
+}
+
+.background-red:hover {
+  background: #f56060;
 }
 
 .btn-align {

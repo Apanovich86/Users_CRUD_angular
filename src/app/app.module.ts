@@ -11,6 +11,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import { GetUserComponent } from './components/userApp/get-user/get-user.component';
+import { MyEventDirective } from './directives/my-event.directive';
+import { MyColorChangeDirective } from './directives/my-color-change.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { GetUserComponent } from './components/userApp/get-user/get-user.compone
     UserListComponent,
     UserRegisterComponent,
     UserUpdateComponent,
-    GetUserComponent
+    GetUserComponent,
+    MyEventDirective,
+    MyColorChangeDirective
   ],
   imports: [
     BrowserModule,

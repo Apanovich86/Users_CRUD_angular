@@ -1,7 +1,10 @@
-<div class="title">Update User:</div>
+<div [myColorChange]="currentColor" class="title">Update User:</div>
 <form>
   <div class="inputs-middle">
-    <input type="text" name="name" class="user-update" placeholder="Name" [(ngModel)]="userObj.userName"/>
+    <input type="text" required name="name" #name="ngModel" class="user-update" placeholder="Name" [(ngModel)]="userObj.userName"/>
+    <div *ngIf="name.touched">
+      <span *ngIf="name.errors?.['required']">Required</span>
+    </div>
     <input type="text" name="email" class="user-update" placeholder="Email" [(ngModel)]="userObj.email"/>
     <input type="text" name="phone" class="user-update" placeholder="Phone" [(ngModel)]="userObj.phoneNumber"/>
     <button class="submit" (click)="updateUser()">Submit</button>

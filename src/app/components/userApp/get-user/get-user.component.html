@@ -1,8 +1,9 @@
-<div class="title">{{selectedItem.userName}} details:</div>
+<div [myColorChange]="currentColor" class="title">{{userObj.userName}} details:</div>
 <form>
   <div class="inputs-middle">
-    <input type="text" name="name" class="get-user" [(ngModel)]="selectedItem.userName" placeholder="userName"/>
-    <input type="text" name="email" class="get-user" placeholder="Email" [(ngModel)]="selectedItem.email"/>
-    <input type="text" name="phone" class="get-user" placeholder="Phone" [(ngModel)]="selectedItem.phoneNumber"/>
+    <input type="text" name="name" class="get-user" placeholder="userName" [(ngModel)]="userObj.userName"/>
+    <input type="text" name="email" class="get-user" placeholder="Email" [(ngModel)]="userObj.email"/>
+    <input type="text" name="phone" class="get-user" placeholder="Phone" [(ngModel)]="userObj.phoneNumber"/>
+    <button class="submit" (click)="backToList()">Back</button>
   </div>
 </form>

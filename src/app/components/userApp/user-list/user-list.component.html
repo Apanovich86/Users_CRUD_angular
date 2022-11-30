@@ -1,4 +1,4 @@
-<div class="title-list">List of users</div>
+<div myColorChange="rgb(56, 129, 93)" class="title-list">List of users</div>
 <div class="d-flex">
   <button class="add-btn" [routerLink]="['/addUser']">+ Add user</button>
 </div>
@@ -12,14 +12,14 @@
       <th>Phone number</th>
       <th>Options</th>
     </tr>
-    <tr *ngFor="let item of userList;let i= index">
+    <tr appMyEvent *ngFor="let item of userList;let i= index">
       <td>{{i + 1}}</td>
       <td>{{item.userName}}</td>
       <td>{{item.email}}</td>
       <td>{{item.phoneNumber}}</td>
       <td>
         <div class="btn-align">
-        <button class="options-btn" [routerLink]="['/getUser']" (click)="onSelect(item)">Details</button>
+        <button class="options-btn" [routerLink]="['/getUser', item.userId]" (click)="onSelect(item)">Details</button>
         <button class="options-btn background-green" [routerLink]="['/updateUser', item.userId]">Edit</button>
         <button class="options-btn background-red" (click)="delete(item.userId)">Delete</button>
         </div>

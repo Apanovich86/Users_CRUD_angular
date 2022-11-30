@@ -19,6 +19,10 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAllUsers();
+  }
+
+  getAllUsers() {
     const records = localStorage.getItem('userList');
     if (records !== null) {
       this.userList = JSON.parse(records);
@@ -32,7 +36,7 @@ export class UserListComponent implements OnInit {
       userList.splice(userList.findIndex((ind:any) => ind.userId === id), 1);
       localStorage.setItem('userList', JSON.stringify(userList));
     }
-    this.router.navigateByUrl('');
+    this.getAllUsers();
   }
 
 }

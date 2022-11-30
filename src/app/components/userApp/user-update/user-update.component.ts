@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class UserUpdateComponent implements OnInit {
 
   userObj: userObj;
+  currentColor: string = "";
   constructor(private route: ActivatedRoute, private router: Router) {
     this.userObj = new userObj();
     this.route.params.subscribe((res) => {
@@ -18,6 +19,7 @@ export class UserUpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.currentColor = "#0aa30a";
     const oldRecords = localStorage.getItem('userList');
     if (oldRecords !== null) {
       const userList = JSON.parse(oldRecords);

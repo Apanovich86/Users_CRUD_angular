@@ -10,12 +10,14 @@ import {Router} from "@angular/router";
 export class UserRegisterComponent implements OnInit {
 
   userObj: userObj;
+  currentColor: string = "";
 
   constructor(private router: Router) {
     this.userObj = new userObj();
   }
 
   ngOnInit(): void {
+    this.currentColor = "rgb(56 129 93)";
   }
 
   getNewUserId() {
