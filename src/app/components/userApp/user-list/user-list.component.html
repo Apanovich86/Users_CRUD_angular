@@ -1,6 +1,10 @@
 <div myColorChange="rgb(56, 129, 93)" class="title-list">List of users</div>
 <div class="d-flex">
   <button class="add-btn" [routerLink]="['/addUser']">+ Add user</button>
+  <div>
+    <input type="text" id="name" [(ngModel)]="searchStr">
+    <label>Search by name</label>
+  </div>
 </div>
 
 <div class="d-flex">
@@ -12,11 +16,11 @@
       <th>Phone number</th>
       <th>Options</th>
     </tr>
-    <tr appMyEvent *ngFor="let item of userList;let i= index">
+    <tr appMyEvent *ngFor="let item of userList | search: searchStr;let i= index">
       <td>{{i + 1}}</td>
       <td>{{item.userName}}</td>
       <td>{{item.email}}</td>
-      <td>{{item.phoneNumber}}</td>
+      <td>{{item.phoneNumber | textTransform: '+38'}}</td>
       <td>
         <div class="btn-align">
         <button class="options-btn" [routerLink]="['/getUser', item.userId]" (click)="onSelect(item)">Details</button>

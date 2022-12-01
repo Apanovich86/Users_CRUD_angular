@@ -13,6 +13,8 @@ import {CommonModule} from "@angular/common";
 import { GetUserComponent } from './components/userApp/get-user/get-user.component';
 import { MyEventDirective } from './directives/my-event.directive';
 import { MyColorChangeDirective } from './directives/my-color-change.directive';
+import { TextTransformPipe } from './pipes/text-transform.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MyColorChangeDirective } from './directives/my-color-change.directive';
     UserUpdateComponent,
     GetUserComponent,
     MyEventDirective,
-    MyColorChangeDirective
+    MyColorChangeDirective,
+    TextTransformPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

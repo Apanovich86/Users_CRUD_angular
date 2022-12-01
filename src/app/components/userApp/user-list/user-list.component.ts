@@ -11,11 +11,13 @@ export class UserListComponent implements OnInit {
 
   userList: userObj [];
   selectedItem: userObj = {};
+  searchStr: string;
   onSelect(item: userObj): void {
     this.selectedItem = item;
   }
   constructor(private router: Router) {
     this.userList = [];
+    this.searchStr = '';
   }
 
   ngOnInit(): void {

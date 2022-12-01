@@ -1,8 +1,11 @@
 <div [myColorChange]="currentColor" class="title">Add User:</div>
 <form>
   <div class="inputs-middle">
-  <input type="text" name="userName" class="user-register" placeholder="Name" [(ngModel)]="userObj.userName"/>
-  <input type="text" name="email" class="user-register" placeholder="Email" [(ngModel)]="userObj.email"/>
+  <input type="text" required #fname='ngModel' name="userName" class="user-register" placeholder="Name" [(ngModel)]="userObj.userName"/>
+  <div *ngIf="fname.touched">
+    <span *ngIf="fname.errors?.['required']">Required</span>
+  </div>
+    <input type="text" name="email" class="user-register" placeholder="Email" [(ngModel)]="userObj.email"/>
   <input type="text" name="phone" class="user-register" placeholder="Phone" [(ngModel)]="userObj.phoneNumber"/>
   <button class="submit" (click)="saveUser()">Submit</button>
   </div>
