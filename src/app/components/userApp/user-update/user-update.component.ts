@@ -11,6 +11,7 @@ export class UserUpdateComponent implements OnInit {
 
   userObj: userObj;
   currentColor: string = "";
+
   constructor(private route: ActivatedRoute, private router: Router) {
     this.userObj = new userObj();
     this.route.params.subscribe((res) => {
@@ -36,7 +37,7 @@ export class UserUpdateComponent implements OnInit {
     const oldRecords = localStorage.getItem('userList')
     if (oldRecords !== null) {
       const userList = JSON.parse(oldRecords);
-      userList.splice(userList.findIndex((ind:any) => ind.userId === this.userObj.userId), 1);
+      userList.splice(userList.findIndex((ind: any) => ind.userId == this.userObj.userId), 1);
       userList.push(this.userObj);
       localStorage.setItem('userList', JSON.stringify(userList));
     }

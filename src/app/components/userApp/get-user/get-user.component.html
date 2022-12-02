@@ -1,9 +1,9 @@
 <div [myColorChange]="currentColor" class="title">{{userObj.userName}} details:</div>
 <form>
   <div class="inputs-middle">
-    <input type="text" name="name" class="get-user" placeholder="userName" [(ngModel)]="userObj.userName"/>
-    <input type="text" name="email" class="get-user" placeholder="Email" [(ngModel)]="userObj.email"/>
-    <input type="text" name="phone" class="get-user" placeholder="Phone" [(ngModel)]="userObj.phoneNumber"/>
+    <input type="text" name="name" class="get-user"  disabled placeholder="userName" [(ngModel)]="userObj.userName"/>
+    <input type="text" name="email" class="get-user" disabled placeholder="Email" [(ngModel)]="userObj.email"/>
+    <input type="text" name="phone" class="get-user" disabled placeholder="Phone" [(ngModel)]="userObj.phoneNumber"/>
     <button class="submit" (click)="backToList()">Back</button>
   </div>
 </form>

@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {userObj} from "../interfaces/user";
 
 @Pipe({
@@ -7,8 +7,8 @@ import {userObj} from "../interfaces/user";
 export class SearchPipe implements PipeTransform {
 
   transform(userList: userObj [], value: any) {
-    return userList.filter((user:any)=>{
-      return user.userName?.includes(value)
+    return userList.filter((user: any) => {
+        return user.userName?.includes(value)
       }
     )
   }

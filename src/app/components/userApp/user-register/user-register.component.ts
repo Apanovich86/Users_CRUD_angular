@@ -7,10 +7,12 @@ import {Router} from "@angular/router";
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css']
 })
+
 export class UserRegisterComponent implements OnInit {
 
   userObj: userObj;
   currentColor: string = "";
+  requireColor: string = "";
 
   constructor(private router: Router) {
     this.userObj = new userObj();
@@ -18,6 +20,7 @@ export class UserRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentColor = "rgb(56 129 93)";
+    this.requireColor = "red";
   }
 
   getNewUserId() {

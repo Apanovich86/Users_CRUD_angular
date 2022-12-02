@@ -1,10 +1,14 @@
 <div myColorChange="rgb(56, 129, 93)" class="title-list">List of users</div>
 <div class="d-flex">
-  <button class="add-btn" [routerLink]="['/addUser']">+ Add user</button>
   <div>
-    <input type="text" id="name" [(ngModel)]="searchStr">
-    <label>Search by name</label>
+    <div class="search-box">
+    <div>
+      <label>Search by name</label>
+    </div>
+    <input class="search-input"  type="text" id="name" [(ngModel)]="searchStr">
+    </div>
   </div>
+  <button class="add-btn" [routerLink]="['/addUser']">+ Add user</button>
 </div>
 
 <div class="d-flex">
@@ -20,7 +24,7 @@
       <td>{{i + 1}}</td>
       <td>{{item.userName}}</td>
       <td>{{item.email}}</td>
-      <td>{{item.phoneNumber | textTransform: '+38'}}</td>
+      <td>{{item.phoneNumber | textTransform: '+380'}}</td>
       <td>
         <div class="btn-align">
         <button class="options-btn" [routerLink]="['/getUser', item.userId]" (click)="onSelect(item)">Details</button>

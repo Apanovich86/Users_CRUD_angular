@@ -54,7 +54,7 @@ td {
 
 .d-flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .options-btn {
@@ -90,4 +90,30 @@ td {
 .btn-align {
   display: flex;
   justify-content: space-around;
+}
+
+label {
+  color: rgb(56, 129, 93);
+  font-size: 14px;
+}
+
+.search-box {
+  margin: 20px;
+}
+
+.search-input {
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid rgb(56, 129, 93);
+  width: 300px;
+}
+
+input {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input:active {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
